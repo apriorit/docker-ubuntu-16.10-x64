@@ -19,7 +19,7 @@ COPY resources /srv/resources
 RUN chmod +x ./qt-unified-linux-x64-online.run
 RUN ./qt-unified-linux-x64-online.run --script /srv/resources/qt-installer-noninteractive.qs -platform minimal
 
-
+#configure qt
 RUN /opt/Qt/Tools/QtCreator/bin/qbs setup-toolchains --detect 
 RUN /opt/Qt/Tools/QtCreator/bin/qbs setup-qt '/opt/Qt/5.7/gcc_64/bin/qmake' QtProfile
 RUN /opt/Qt/Tools/QtCreator/bin/qbs config profiles.QtProfile.baseProfile clang
